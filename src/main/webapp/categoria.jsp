@@ -8,15 +8,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <link rel="stylesheet" href="styles.css">
     <title>Agregar categoria</title>
 </head>
 <body>
     <main>
         <article>
-            <h1 class="f-title">Agregar categoria</h1>
-            <section class="f-categorias">
+            <section class="formulario">
                 <form action="registrarCategoria" method="post">
-                    <input name="nombre" placeholder="nombre categoria" type="text">
+                    <h1>Agregar categoria</h1>
+
+                    <input name="nombre" placeholder="Nombre categoria" type="text">
                     <button type="submit">Agregar categoria nueva</button>
                 </form>
                 <%
@@ -27,8 +29,8 @@
                 <%
                     }
                 %>
+                <a href="index.jsp">Volver</a>
             </section>
-            <a href="index.jsp">Volver</a>
         </article>
     </main>
 </body>

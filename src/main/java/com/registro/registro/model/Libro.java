@@ -64,4 +64,10 @@ public class Libro {
         System.out.println("Ya se obtuvieron los libros");
         return libros;
     }
+
+    public boolean eliminarLibro() {
+        Connection connection= DBConnector.connection("libreria","root","");
+        DSLContext query= DSL.using(connection);
+        return  new LibroDAO().eliminarLibro(query,this);
+    }
 }

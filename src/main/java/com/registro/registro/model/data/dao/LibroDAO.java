@@ -48,4 +48,17 @@ public class LibroDAO {
         return libros;
     }
 
+    public boolean eliminarLibro(DSLContext query, Libro libro) {
+        int idLibro=libro.getId();
+        int result=0;
+        try{
+            result=query.deleteFrom(
+                            DSL.table("libros"))
+                    .where(DSL.field("cod_libro").eq(idLibro))
+                    .execute();
+        }catch (Exception e){
+            System.out.println(e);
+        }
+        return result==1;
+    }
 }

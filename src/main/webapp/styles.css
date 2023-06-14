@@ -1,0 +1,63 @@
+.pp-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Ajusta la altura según tus necesidades */
+    text-align: center;
+    display:flex;
+    flex-direction:column;
+}
+.pp-title h1{
+    font-size:100px
+}
+.formulario{
+    width:90%;
+    margin:auto;
+    padding-top:20%;
+    display:flex;
+    flex-direction:column;
+;
+    align-items:center;
+    gap:5px;
+}
+.formulario form{
+    margin:auto;
+    width:50%;
+    display:flex;
+    flex-direction:column;
+    gap:10px
+}
+.formulario a{
+    margin:auto;
+}
+.r-busqueda table{
+    text-align:center;
+    width:80%;
+    margin:auto;
+    justify-content:space-evenly;
+}
+.r-busqueda th{
+    border-bottom: 5px solid black;
+}
+.b-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100vw;
+
+}
+
+.b-form form {
+    margin-top: 20px;
+}
+
+.b-form input,
+.b-form select,
+.b-form button {
+    margin-bottom: 10px;
+}
+
+.b-form a {
+    margin-top: 20px;
+}

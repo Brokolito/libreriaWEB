@@ -36,6 +36,7 @@ public class BuscarLibroServlet extends HttpServlet {
             }
         }
         System.out.println("Libros");
+        request.setAttribute("categorias",obtenerCategorias());
         requestDispatcher.forward(request,response);
     }
     public ArrayList<Categoria> obtenerCategorias(){

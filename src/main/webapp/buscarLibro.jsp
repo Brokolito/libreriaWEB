@@ -10,7 +10,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Buscar libro</title>
 </head>
 <body>
 <main>
@@ -26,8 +27,17 @@
                 </select>
                 <button type="submit">Buscar</button>
             </form>
+            <a href="index.jsp">Volver</a>
         </article>
     </section>
+    <%
+        String mensaje = (String) request.getAttribute("status");
+        if (mensaje != null && !mensaje.isEmpty()) {
+    %>
+    <h2><%= mensaje %></h2>
+    <%
+        }
+    %>
     <section class="r-busqueda">
         <table>
             <tr>
@@ -41,16 +51,13 @@
                 <tr>
                     <td><c:out value="${libro.getId()}"></c:out></td>
                     <td><c:out value="${libro.getNombre()}"></c:out> </td>
-                    <td><c:out value="${libro.getCategoria()}"></c:out> </td>
-                    <c:forEach items="${categorias}" var="categoria">
-                        <td>
-                            <c:choose>
-                                <c:when test="${libro.categoria() eq categoria.id()}">
-                                    <c:out value="${categoria.nombreCategoria()}"/>
-                                </c:when>
-                            </c:choose>
-                        </td>
-                    </c:forEach>
+                    <td><c:forEach items="${categorias}" var="categoria">
+                        <c:choose>
+                        <c:when test="${libro.categoria eq categoria.id}">
+                            <c:out value="${categoria.nombreCategoria}" />
+                        </c:when>
+                        </c:choose>
+                        </c:forEach>
                     <td><c:out value="${libro.getDate()}"></c:out> </td>
                     <td>
                         <a href="eliminarLibro?id=${libro.getId()}">Eliminar</a></td>

@@ -12,13 +12,22 @@
 <html>
 <head>
     <title>Registro Libro</title>
-    <link type="text/css" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <main>
         <article>
             <section class="formulario">
+                <%
+                    String mensaje = (String) request.getAttribute("status");
+                    if (mensaje != null && !mensaje.isEmpty()) {
+                %>
+                <h2><%= mensaje %></h2>
+                <%
+                    }
+                %>
                 <form action="crearLibro" method="post">
+                    <h1>Registrar libro</h1>
                     <input placeholder="Nombre del libro" name="titulo" type=text">
                     <select name="categoria">
                         <option value="0">Categoria</option>
